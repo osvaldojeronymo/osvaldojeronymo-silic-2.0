@@ -17,14 +17,21 @@ The ecosystem is organized as coordinated repositories and modules that evolve u
 
 ### Repositories (placeholders)
 
-- [`silic-2.0`](https://github.com/<org>/silic-2.0) — Central documentation and governance hub
-- [`silic-2.0-platform`](https://github.com/<org>/silic-2.0-platform) — Core platform services
-- [`silic-2.0-frontend`](https://github.com/<org>/silic-2.0-frontend) — User-facing applications
-- [`silic-2.0-data`](https://github.com/<org>/silic-2.0-data) — Data and analytics pipelines
+#### Núcleo do Sistema
 
-> Update links as official repositories are created.
+Tipo         Função                        Repositório	                                            GitPages
+Portal       Entrada principal do sistema  https://github.com/osvaldojeronymo/silic-portal-imoveis  [Portal](https://osvaldojeronymo.github.io/silic-portal-imoveis/)
+Serviços	   Solicitação de serviços       https://github.com/osvaldojeronymo/silic-request-service [Serviços](https://osvaldojeronymo.github.io/silic-request-service/)
+Operacional	 Tratamento de demandas        https://github.com/osvaldojeronymo/silic-hands-on        [Operacional](https://osvaldojeronymo.github.io/silic-hands-on/)
+Gestão    	 Fila de trabalho              https://github.com/osvaldojeronymo/silic-input-doc       [Gestão](https://osvaldojeronymo.github.io/silic-input-doc/))
 
-## Architectural Vision
+##### Ações Rápidas
+
+Tipo	      Função                Repositório	                                              GitPages
+Ação Rápida	Processo Digital      https://github.com/osvaldojeronymo/silic-digital-process  [Processo Digital](https://osvaldojeronymo.github.io/silic-digital-process/)
+Ação Rápida	Motivos de Devolução  https://github.com/osvaldojeronymo/silic-catalog-reasons/ [Motivos de Devolução](https://osvaldojeronymo.github.io/silic-catalog-reasons/)
+Ação Rápida	Assinador Digital     https://github.com/osvaldojeronymo/silic-digital-process/ [Assinador Digital](https://osvaldojeronymo.github.io/silic-digital-signer/)
+Ação Rápida	Gerador de Documentos https://github.com/osvaldojeronymo/silic-call-for-tenders [Gerador de Documentos](https://osvaldojeronymo.github.io/silic-call-for-tenders/)
 
 SILIC 2.0 follows a modular, evolvable architecture with clear ownership, standardized interfaces, and governance-driven decision making.
 
