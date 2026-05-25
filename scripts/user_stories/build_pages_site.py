@@ -139,7 +139,7 @@ def build_index_html(index_payload: dict) -> str:
     .stats {{ display: flex; gap: 8px; flex-wrap: nowrap; margin: 0; padding: 0; list-style: none; position: relative; z-index: 1; }}
     .stats li {{ background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 7px 12px; font-size: 0.86rem; }}
     .section-head {{ display: flex; justify-content: space-between; gap: 16px; align-items: end; margin-top: 28px; }}
-    .section-head p {{ margin: 0; color: var(--muted); max-width: 780px; }}
+    .section-head p {{ margin: 0; color: var(--muted); max-width: none; white-space: nowrap; }}
     .stories-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 22px; }}
     .story-card {{ background: rgba(255,253,248,0.92); border: 1px solid var(--line); border-radius: 20px; padding: 22px; box-shadow: 0 18px 45px rgba(31, 42, 55, 0.08); backdrop-filter: blur(8px); }}
     .story-head {{ display: flex; justify-content: space-between; gap: 10px; align-items: center; margin-bottom: 12px; }}
@@ -156,7 +156,7 @@ def build_index_html(index_payload: dict) -> str:
     .note-panel strong {{ color: #7c4b00; }}
     footer {{ margin-top: 28px; color: var(--muted); font-size: 0.95rem; }}
     code {{ background: rgba(20, 32, 43, 0.06); padding: 0.15rem 0.4rem; border-radius: 6px; }}
-    @media (max-width: 760px) {{ main {{ padding: 18px 14px 40px; }} .hero {{ padding: 24px; }} .hero-copy {{ width: 100%; max-width: none; }} .hero-copy > .eyebrow, .hero-copy > .meta, .hero-copy > h1, .hero-copy > p {{ white-space: normal; }} .hero-toolbar {{ flex-direction: column; align-items: stretch; flex-wrap: wrap; }} .hero-actions {{ flex-direction: column; align-items: stretch; flex-wrap: wrap; }} .stats {{ flex-wrap: wrap; }} .section-head {{ display: block; }} }}
+    @media (max-width: 760px) {{ main {{ padding: 18px 14px 40px; }} .hero {{ padding: 24px; }} .hero-copy {{ width: 100%; max-width: none; }} .hero-copy > .eyebrow, .hero-copy > .meta, .hero-copy > h1, .hero-copy > p {{ white-space: normal; }} .hero-toolbar {{ flex-direction: column; align-items: stretch; flex-wrap: wrap; }} .hero-actions {{ flex-direction: column; align-items: stretch; flex-wrap: wrap; }} .stats {{ flex-wrap: wrap; }} .section-head {{ display: block; }} .section-head p {{ white-space: normal; }} }}
   </style>
 </head>
 <body>
