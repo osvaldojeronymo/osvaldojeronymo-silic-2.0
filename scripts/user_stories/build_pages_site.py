@@ -161,9 +161,9 @@ def build_index_html(index_payload: dict) -> str:
   <main>
     <section class=\"hero\">
       <div class=\"hero-copy\">
-      <p class=\"eyebrow\">CAIXA · SILIC 2.0 · Governança Documental</p>
+      <p class=\"eyebrow\">CAIXA · SILIC 2.0 · Imóveis</p>
       <p class=\"meta\">Publicacao automatica via GitHub Pages a partir do repositório canonico de documentação</p>
-      <h1>Historias de Usuario do SILIC 2.0</h1>
+      <h1>Historias de Usuario do módulo Imóveis do SILIC 2.0</h1>
       <p>Catálogo institucional publicado a partir do front matter canônico das histórias mantidas em <code>docs/user-stories</code>, com acesso direto aos artefatos de leitura, exportação e integração.</p>
       <div class=\"hero-actions\">
         <a class=\"primary\" href=\"#catalogo\">Abrir catálogo</a>
