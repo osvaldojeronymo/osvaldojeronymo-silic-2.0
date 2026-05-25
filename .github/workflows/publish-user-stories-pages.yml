@@ -1,0 +1,62 @@
+name: Publish User Stories Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/user-stories/**'
+      - 'scripts/user_stories/**'
+      - '.github/workflows/publish-user-stories-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Setup Pandoc
+        uses: pandoc/actions/setup@v1
+
+      - name: Setup LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-latex-recommended
+
+      - name: Build index
+        run: python3 scripts/user_stories/index_user_stories.py
+
+      - name: Build Pages site
+        run: python3 scripts/user_stories/build_pages_site.py
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/user-stories/generated/site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

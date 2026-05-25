@@ -1,0 +1,84 @@
+{
+  "schema": "silic.user-stories.index.v1",
+  "generated_at": "2026-05-25T16:01:09.504554+00:00",
+  "root": "docs/user-stories",
+  "counts": {
+    "total": 2,
+    "user_stories": 1,
+    "templates": 1
+  },
+  "items": [
+    {
+      "id": "HU-PD-001",
+      "title": "Consulta de Processo Digital",
+      "module": "Processo Digital",
+      "status": "Homologado",
+      "owner": "Product Owner",
+      "repository": "silic-digital-process",
+      "prototype": "https://osvaldojeronymo.github.io/silic-digital-process/",
+      "version": 1.0,
+      "last_update": "2026-05-24",
+      "export_targets": [
+        "pdf",
+        "docx",
+        "md",
+        "ewm"
+      ],
+      "kind": "user-story",
+      "path": "docs/user-stories/HU-PD-001.md",
+      "ewm": {
+        "work_item_type": "Story",
+        "project_area": "SILIC 2.0",
+        "team_area": "Arquitetura e Produto",
+        "category": "Processo Digital",
+        "planned_for": "A definir",
+        "iteration": "A definir",
+        "priority": "Medium",
+        "severity": "Normal",
+        "work_item_id": "A definir",
+        "parent_work_item_id": "A definir",
+        "tags": [
+          "silic-2.0",
+          "processo-digital",
+          "user-story",
+          "homologado"
+        ]
+      }
+    },
+    {
+      "id": "HU-XXX-000",
+      "title": "Titulo da Historia de Usuario",
+      "module": "Nome do Modulo",
+      "status": "Rascunho",
+      "owner": "Product Owner",
+      "repository": "nome-do-repositorio",
+      "prototype": "https://exemplo.com/prototipo",
+      "version": 0.1,
+      "last_update": "AAAA-MM-DD",
+      "export_targets": [
+        "pdf",
+        "docx",
+        "md",
+        "ewm"
+      ],
+      "kind": "template",
+      "path": "docs/user-stories/HU-TEMPLATE.md",
+      "ewm": {
+        "work_item_type": "Story",
+        "project_area": "SILIC 2.0",
+        "team_area": "A definir",
+        "category": "Nome do Modulo",
+        "planned_for": "A definir",
+        "iteration": "A definir",
+        "priority": "Medium",
+        "severity": "Normal",
+        "work_item_id": "A definir",
+        "parent_work_item_id": "A definir",
+        "tags": [
+          "silic-2.0",
+          "user-story"
+        ]
+      }
+    }
+  ]
+}
