@@ -41,7 +41,7 @@ Este documento e a fonte canonica da historia de usuario HU-PD-001 no ecossistem
 
 O prototipo de Processo Digital, ja validado pelo Product Owner, consolida uma necessidade operacional recorrente do ecossistema SILIC 2.0: permitir consulta e acompanhamento estruturado de um processo digital em uma experiencia unica, com dados principais do protocolo, filtros de pesquisa, visualizacao documental, instrumentos vinculados e linha do tempo.
 
-No dominio de imoveis da CAIXA, a funcionalidade atende a necessidade de dar visibilidade ao andamento processual, reduzir dispersao informacional e preparar a evolucao do prototipo para um fluxo rastreavel e integravel com servicos corporativos.
+No dominio da CAIXA, a funcionalidade atende a necessidade de dar visibilidade aos documentos que compõem o processo de uma referida demanda, reduzir dispersao informacional e preparar a evolucao do prototipo para um fluxo rastreavel e integravel com servicos corporativos.
 
 ## Objetivo
 

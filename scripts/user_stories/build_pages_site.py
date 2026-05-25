@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 STORIES_DIR = ROOT / "docs" / "user-stories"
 GENERATED_DIR = STORIES_DIR / "generated"
 SITE_DIR = GENERATED_DIR / "site"
+PUBLIC_DOCS_URL = "https://github.com/osvaldojeronymo/osvaldojeronymo-silic-2.0/tree/main/docs/user-stories"
 
 
 def story_kind(story_id: str, file_name: str) -> str:
@@ -49,29 +50,28 @@ def build_story_site_assets(story_path: Path) -> dict[str, str]:
 
 
 def build_index_html(index_payload: dict) -> str:
-  current_story = next((item for item in index_payload["items"] if item.get("kind") == "user-story"), None)
-  if current_story is None and index_payload["items"]:
-    current_story = index_payload["items"][0]
+    published_items = [item for item in index_payload["items"] if item.get("kind") == "user-story"]
+    current_story = published_items[0] if published_items else None
 
-  current_story_label = "Nenhuma HU publicada"
-  current_story_actions = ""
-  if current_story is not None:
-    current_story_label = f"{current_story.get('id', '')} - {current_story.get('title', '')}".strip(" -")
-    current_artifacts = current_story.get("site_artifacts", {})
-    current_story_actions = "".join(
-      f'<a href="{escape(href)}">{escape(label)}</a>'
-      for label, href in [
-        ("Ler online", current_artifacts.get("html", "")),
-        ("Baixar PDF", current_artifacts.get("pdf", "")),
-        ("Baixar DOCX", current_artifacts.get("docx", "")),
-        ("Abrir Markdown", current_artifacts.get("markdown", "")),
-        ("Abrir EWM JSON", current_artifacts.get("ewm_json", "")),
-      ]
-      if href
-    )
+    current_story_label = "Nenhuma HU publicada"
+    current_story_actions = ""
+    if current_story is not None:
+        current_story_label = f"{current_story.get('id', '')} - {current_story.get('title', '')}".strip(" -")
+        current_artifacts = current_story.get("site_artifacts", {})
+        current_story_actions = "".join(
+            f'<a href="{escape(href)}">{escape(label)}</a>'
+            for label, href in [
+                ("Ler online", current_artifacts.get("html", "")),
+                ("Baixar PDF", current_artifacts.get("pdf", "")),
+                ("Baixar DOCX", current_artifacts.get("docx", "")),
+                ("Abrir Markdown", current_artifacts.get("markdown", "")),
+                ("Abrir EWM JSON", current_artifacts.get("ewm_json", "")),
+            ]
+            if href
+        )
 
     cards = []
-    for item in index_payload["items"]:
+    for item in published_items:
         artifacts = item.get("site_artifacts", {})
         links = []
         for label, key in [("Visualizar", "html"), ("PDF", "pdf"), ("DOCX", "docx"), ("EWM JSON", "ewm_json"), ("Markdown", "markdown")]:
@@ -90,7 +90,7 @@ def build_index_html(index_payload: dict) -> str:
 
         cards.append(
             "<article class=\"story-card\">"
-            f"<div class=\"story-head\"><p class=\"story-id\">{escape(str(item.get('id', '')))}</p><span class=\"story-kind\">{escape(str(item.get('kind', '')).replace('-', ' '))}</span></div>"
+            f"<div class=\"story-head\"><p class=\"story-id\">{escape(str(item.get('id', '')))}</p><span class=\"story-kind\">História publicada</span></div>"
             f"<h2>{escape(str(item.get('title', '')))}</h2>"
             f"<p class=\"story-module\">{escape(str(item.get('module', '')))}</p>"
             f"<p class=\"story-summary\">Status: <strong>{escape(str(item.get('status', '')))}</strong> · Responsável: <strong>{escape(str(item.get('owner', '')))}</strong> · Versão: <strong>{escape(str(item.get('version', '')))}</strong></p>"
@@ -100,9 +100,7 @@ def build_index_html(index_payload: dict) -> str:
         )
 
     generated_at = escape(index_payload["generated_at"])
-    total = index_payload["counts"]["total"]
-    user_stories = index_payload["counts"]["user_stories"]
-    templates = index_payload["counts"]["templates"]
+    total = len(published_items)
 
     return f"""<!DOCTYPE html>
 <html lang=\"pt-BR\">
@@ -177,12 +175,10 @@ def build_index_html(index_payload: dict) -> str:
           </div>
         </details>
         <a href=\"index.json\">Baixar índice JSON</a>
-        <a href=\"https://github.com/osvaldojeronymo/osvaldojeronymo-silic-2.0/tree/copilot-structure/docs/user-stories\">Abrir fontes no GitHub</a>
+        <a href=\"{PUBLIC_DOCS_URL}\">Abrir fontes no GitHub</a>
       </div>
       <ul class=\"stats\">
-        <li>Total: {total}</li>
-        <li>Historias: {user_stories}</li>
-        <li>Templates: {templates}</li>
+        <li>Historias publicadas: {total}</li>
         <li>Gerado em: {generated_at}</li>
       </ul>
       </div>
@@ -218,6 +214,8 @@ def main() -> None:
     for story_path in list_story_files(STORIES_DIR):
         story = load_story(story_path)
         kind = story_kind(story.story_id, story_path.name)
+        if kind != "user-story":
+            continue
         item = next((entry for entry in index_payload["items"] if entry["id"] == story.story_id), None)
         if item is None:
             continue
