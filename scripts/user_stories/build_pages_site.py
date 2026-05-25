@@ -123,7 +123,8 @@ def build_index_html(index_payload: dict) -> str:
     .eyebrow {{ margin: 0 0 10px; font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.82; }}
     .hero-copy {{ width: calc(100% - 32px); max-width: none; min-width: 0; position: relative; z-index: 1; }}
     .hero-copy > .eyebrow, .hero-copy > .meta, .hero-copy > h1, .hero-copy > p {{ white-space: nowrap; }}
-    .hero-actions {{ display: flex; gap: 10px; flex-wrap: nowrap; margin-top: 22px; }}
+    .hero-toolbar {{ display: flex; gap: 12px; align-items: center; flex-wrap: nowrap; margin-top: 22px; }}
+    .hero-actions {{ display: flex; gap: 10px; flex-wrap: nowrap; margin-top: 0; }}
     .hero-actions a {{ display: inline-flex; align-items: center; justify-content: center; padding: 11px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.24); background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; }}
     .hero-actions a.primary {{ background: var(--accent-2); border-color: var(--accent-2); color: #14202b; }}
     .hero-actions details {{ position: relative; }}
@@ -135,7 +136,7 @@ def build_index_html(index_payload: dict) -> str:
     .export-menu a {{ display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-radius: 12px; color: var(--accent); background: #fff; border: 1px solid #dfe6ef; margin-top: 8px; text-decoration: none; }}
     .export-menu a:hover {{ background: var(--soft); text-decoration: none; }}
     .meta {{ color: rgba(255,255,255,0.84); margin-bottom: 12px; font-size: 0.95rem; }}
-    .stats {{ display: flex; gap: 12px; flex-wrap: nowrap; margin: 22px 0 0; padding: 0; list-style: none; position: relative; z-index: 1; }}
+    .stats {{ display: flex; gap: 12px; flex-wrap: nowrap; margin: 0; padding: 0; list-style: none; position: relative; z-index: 1; }}
     .stats li {{ background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 8px 14px; font-size: 0.95rem; }}
     .section-head {{ display: flex; justify-content: space-between; gap: 16px; align-items: end; margin-top: 28px; }}
     .section-head p {{ margin: 0; color: var(--muted); max-width: 780px; }}
@@ -155,7 +156,7 @@ def build_index_html(index_payload: dict) -> str:
     .note-panel strong {{ color: #7c4b00; }}
     footer {{ margin-top: 28px; color: var(--muted); font-size: 0.95rem; }}
     code {{ background: rgba(20, 32, 43, 0.06); padding: 0.15rem 0.4rem; border-radius: 6px; }}
-    @media (max-width: 760px) {{ main {{ padding: 18px 14px 40px; }} .hero {{ padding: 24px; }} .hero-copy {{ width: 100%; max-width: none; }} .hero-copy > .eyebrow, .hero-copy > .meta, .hero-copy > h1, .hero-copy > p {{ white-space: normal; }} .hero-actions {{ flex-direction: column; align-items: stretch; flex-wrap: wrap; }} .stats {{ flex-wrap: wrap; }} .section-head {{ display: block; }} }}
+    @media (max-width: 760px) {{ main {{ padding: 18px 14px 40px; }} .hero {{ padding: 24px; }} .hero-copy {{ width: 100%; max-width: none; }} .hero-copy > .eyebrow, .hero-copy > .meta, .hero-copy > h1, .hero-copy > p {{ white-space: normal; }} .hero-toolbar {{ flex-direction: column; align-items: stretch; flex-wrap: wrap; }} .hero-actions {{ flex-direction: column; align-items: stretch; flex-wrap: wrap; }} .stats {{ flex-wrap: wrap; }} .section-head {{ display: block; }} }}
   </style>
 </head>
 <body>
@@ -166,22 +167,24 @@ def build_index_html(index_payload: dict) -> str:
       <p class=\"meta\">Publicacao automatica via GitHub Pages a partir do repositório canonico de documentação</p>
       <h1>Historias de Usuario do módulo Imóveis do SILIC 2.0</h1>
       <p>Catálogo institucional publicado a partir do front matter canônico das histórias mantidas em <code>docs/user-stories</code>, com acesso direto aos artefatos de leitura, exportação e integração.</p>
-      <div class=\"hero-actions\">
-        <a class=\"primary\" href=\"#catalogo\">Abrir catálogo</a>
-        <details>
-          <summary>Exportar HU atual</summary>
-          <div class="export-menu">
-            <p>HU atual: <strong>{escape(current_story_label)}</strong></p>
-            {current_story_actions}
-          </div>
-        </details>
-        <a href=\"index.json\">Baixar índice JSON</a>
-        <a href=\"{PUBLIC_DOCS_URL}\">Abrir fontes no GitHub</a>
+      <div class=\"hero-toolbar\">
+        <div class=\"hero-actions\">
+          <a class=\"primary\" href=\"#catalogo\">Abrir catálogo</a>
+          <details>
+            <summary>Exportar HU atual</summary>
+            <div class="export-menu">
+              <p>HU atual: <strong>{escape(current_story_label)}</strong></p>
+              {current_story_actions}
+            </div>
+          </details>
+          <a href=\"index.json\">Baixar índice JSON</a>
+          <a href=\"{PUBLIC_DOCS_URL}\">Abrir fontes no GitHub</a>
+        </div>
+        <ul class=\"stats\">
+          <li>Historias publicadas: {total}</li>
+          <li>Gerado em: {generated_at}</li>
+        </ul>
       </div>
-      <ul class=\"stats\">
-        <li>Historias publicadas: {total}</li>
-        <li>Gerado em: {generated_at}</li>
-      </ul>
       </div>
     </section>
     <section id=\"catalogo\" class=\"section-head\">
