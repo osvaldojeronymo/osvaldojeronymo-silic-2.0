@@ -123,12 +123,12 @@ def build_index_html(index_payload: dict) -> str:
     .eyebrow {{ margin: 0 0 10px; font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.82; }}
     .hero-copy {{ width: calc(100% - 32px); max-width: none; min-width: 0; position: relative; z-index: 1; }}
     .hero-copy > .eyebrow, .hero-copy > .meta, .hero-copy > h1, .hero-copy > p {{ white-space: nowrap; }}
-    .hero-toolbar {{ display: flex; gap: 12px; align-items: center; flex-wrap: nowrap; margin-top: 22px; }}
-    .hero-actions {{ display: flex; gap: 10px; flex-wrap: nowrap; margin-top: 0; }}
-    .hero-actions a {{ display: inline-flex; align-items: center; justify-content: center; padding: 11px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.24); background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; }}
+    .hero-toolbar {{ display: flex; gap: 10px; align-items: center; flex-wrap: nowrap; margin-top: 22px; }}
+    .hero-actions {{ display: flex; gap: 8px; flex-wrap: nowrap; margin-top: 0; }}
+    .hero-actions a {{ display: inline-flex; align-items: center; justify-content: center; padding: 9px 13px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.24); background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; font-size: 0.86rem; }}
     .hero-actions a.primary {{ background: var(--accent-2); border-color: var(--accent-2); color: #14202b; }}
     .hero-actions details {{ position: relative; }}
-    .hero-actions summary {{ display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.24); background: rgba(255,255,255,0.12); color: #fff; cursor: pointer; list-style: none; font-weight: 600; }}
+    .hero-actions summary {{ display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 9px 13px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.24); background: rgba(255,255,255,0.12); color: #fff; cursor: pointer; list-style: none; font-weight: 600; font-size: 0.86rem; }}
     .hero-actions summary::-webkit-details-marker {{ display: none; }}
     .hero-actions details[open] summary {{ background: rgba(255,255,255,0.22); }}
     .export-menu {{ position: absolute; top: calc(100% + 10px); left: 0; min-width: 250px; background: #fffdf8; color: var(--ink); border: 1px solid #d7dde7; border-radius: 18px; box-shadow: 0 18px 45px rgba(20, 32, 43, 0.16); padding: 14px; z-index: 5; }}
@@ -136,8 +136,8 @@ def build_index_html(index_payload: dict) -> str:
     .export-menu a {{ display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-radius: 12px; color: var(--accent); background: #fff; border: 1px solid #dfe6ef; margin-top: 8px; text-decoration: none; }}
     .export-menu a:hover {{ background: var(--soft); text-decoration: none; }}
     .meta {{ color: rgba(255,255,255,0.84); margin-bottom: 12px; font-size: 0.95rem; }}
-    .stats {{ display: flex; gap: 12px; flex-wrap: nowrap; margin: 0; padding: 0; list-style: none; position: relative; z-index: 1; }}
-    .stats li {{ background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 8px 14px; font-size: 0.95rem; }}
+    .stats {{ display: flex; gap: 8px; flex-wrap: nowrap; margin: 0; padding: 0; list-style: none; position: relative; z-index: 1; }}
+    .stats li {{ background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 7px 12px; font-size: 0.86rem; }}
     .section-head {{ display: flex; justify-content: space-between; gap: 16px; align-items: end; margin-top: 28px; }}
     .section-head p {{ margin: 0; color: var(--muted); max-width: 780px; }}
     .stories-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 22px; }}
