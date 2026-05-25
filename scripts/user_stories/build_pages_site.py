@@ -49,6 +49,27 @@ def build_story_site_assets(story_path: Path) -> dict[str, str]:
 
 
 def build_index_html(index_payload: dict) -> str:
+  current_story = next((item for item in index_payload["items"] if item.get("kind") == "user-story"), None)
+  if current_story is None and index_payload["items"]:
+    current_story = index_payload["items"][0]
+
+  current_story_label = "Nenhuma HU publicada"
+  current_story_actions = ""
+  if current_story is not None:
+    current_story_label = f"{current_story.get('id', '')} - {current_story.get('title', '')}".strip(" -")
+    current_artifacts = current_story.get("site_artifacts", {})
+    current_story_actions = "".join(
+      f'<a href="{escape(href)}">{escape(label)}</a>'
+      for label, href in [
+        ("Ler online", current_artifacts.get("html", "")),
+        ("Baixar PDF", current_artifacts.get("pdf", "")),
+        ("Baixar DOCX", current_artifacts.get("docx", "")),
+        ("Abrir Markdown", current_artifacts.get("markdown", "")),
+        ("Abrir EWM JSON", current_artifacts.get("ewm_json", "")),
+      ]
+      if href
+    )
+
     cards = []
     for item in index_payload["items"]:
         artifacts = item.get("site_artifacts", {})
@@ -106,6 +127,14 @@ def build_index_html(index_payload: dict) -> str:
     .hero-actions {{ display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }}
     .hero-actions a {{ display: inline-flex; align-items: center; justify-content: center; padding: 11px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.24); background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; }}
     .hero-actions a.primary {{ background: var(--accent-2); border-color: var(--accent-2); color: #14202b; }}
+    .hero-actions details {{ position: relative; }}
+    .hero-actions summary {{ display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.24); background: rgba(255,255,255,0.12); color: #fff; cursor: pointer; list-style: none; font-weight: 600; }}
+    .hero-actions summary::-webkit-details-marker {{ display: none; }}
+    .hero-actions details[open] summary {{ background: rgba(255,255,255,0.22); }}
+    .export-menu {{ position: absolute; top: calc(100% + 10px); left: 0; min-width: 250px; background: #fffdf8; color: var(--ink); border: 1px solid #d7dde7; border-radius: 18px; box-shadow: 0 18px 45px rgba(20, 32, 43, 0.16); padding: 14px; z-index: 5; }}
+    .export-menu p {{ margin: 0 0 10px; color: var(--muted); font-size: 0.92rem; }}
+    .export-menu a {{ display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-radius: 12px; color: var(--accent); background: #fff; border: 1px solid #dfe6ef; margin-top: 8px; text-decoration: none; }}
+    .export-menu a:hover {{ background: var(--soft); text-decoration: none; }}
     .meta {{ color: rgba(255,255,255,0.84); margin-bottom: 12px; }}
     .stats {{ display: flex; gap: 12px; flex-wrap: wrap; margin: 22px 0 0; padding: 0; list-style: none; position: relative; z-index: 1; }}
     .stats li {{ background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 8px 14px; font-size: 0.95rem; }}
@@ -140,6 +169,13 @@ def build_index_html(index_payload: dict) -> str:
       <p>Catálogo institucional publicado a partir do front matter canônico das histórias mantidas em <code>docs/user-stories</code>, com acesso direto aos artefatos de leitura, exportação e integração.</p>
       <div class=\"hero-actions\">
         <a class=\"primary\" href=\"#catalogo\">Abrir catálogo</a>
+        <details>
+          <summary>Exportar HU atual</summary>
+          <div class="export-menu">
+            <p>HU atual: <strong>{escape(current_story_label)}</strong></p>
+            {current_story_actions}
+          </div>
+        </details>
         <a href=\"index.json\">Baixar índice JSON</a>
         <a href=\"https://github.com/osvaldojeronymo/osvaldojeronymo-silic-2.0/tree/copilot-structure/docs/user-stories\">Abrir fontes no GitHub</a>
       </div>

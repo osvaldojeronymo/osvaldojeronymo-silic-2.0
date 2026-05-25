@@ -2,7 +2,7 @@
 
 Indice gerado automaticamente a partir do front matter das historias em `docs/user-stories`.
 
-Gerado em: 2026-05-25T15:31:43.392385+00:00
+Gerado em: 2026-05-25T15:53:36.538737+00:00
 
 | ID | Titulo | Modulo | Status | Tipo | Caminho |
 | --- | --- | --- | --- | --- | --- |
