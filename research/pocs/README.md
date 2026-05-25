@@ -1,11 +1,13 @@
-# Proofs of Concept (PoCs)
+# Provas de Conceito (PoCs)
 
-Use this folder to document exploratory implementations and technical feasibility studies.
+Use esta pasta para documentar implementações exploratórias e estudos de viabilidade técnica.
 
-## Template
+## Modelo
 
-- Hypothesis
-- Scope and constraints
-- Approach
-- Results
-- Decision
+| Campo               | Descrição                                           |
+| ------------------- | --------------------------------------------------- |
+| Hipótese            | Premissa ou questão que será validada.              |
+| Escopo e restrições | Limites do experimento e condicionantes relevantes. |
+| Abordagem           | Estratégia técnica utilizada na prova de conceito.  |
+| Resultados          | Evidências coletadas e principais achados.          |
+| Decisão             | Encaminhamento recomendado após a avaliação.        |

@@ -1,10 +1,12 @@
-# User Stories Research
+# Pesquisa de Histórias de Usuário
 
-Use this folder to document validated user stories, personas, and journey insights.
+Use esta pasta para documentar histórias de usuário validadas, personas e aprendizados da jornada.
 
-## Template
+## Modelo
 
-- Persona / stakeholder
-- Need or problem
-- Story statement
-- Acceptance criteria
+| Campo                        | Descrição                                          |
+| ---------------------------- | -------------------------------------------------- |
+| Persona ou parte interessada | Perfil principal envolvido na necessidade mapeada. |
+| Necessidade ou problema      | Dor, demanda ou oportunidade identificada.         |
+| Declaração da história       | Formulação da história de usuário.                 |
+| Critérios de aceitação       | Condições objetivas para validar a entrega.        |

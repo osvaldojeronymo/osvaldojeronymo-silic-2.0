@@ -1,16 +1,16 @@
-# Module Interaction Diagram (Mermaid Example)
+# Diagrama de Interação entre Módulos (Exemplo em Mermaid)
 
 ```mermaid
 sequenceDiagram
-    participant User
-    participant App as Operational Module
-    participant Core as Core Platform
-    participant Data as Data Services
+    participant Usuario as Usuário
+    participant Modulo as Módulo Operacional
+    participant Plataforma as Plataforma Central
+    participant Dados as Serviços de Dados
 
-    User->>App: Trigger business action
-    App->>Core: Request orchestration
-    Core->>Data: Persist / query information
-    Data-->>Core: Return result
-    Core-->>App: Respond with outcome
-    App-->>User: Present final state
+    Usuario->>Modulo: Disparar ação de negócio
+    Modulo->>Plataforma: Solicitar orquestração
+    Plataforma->>Dados: Persistir ou consultar informações
+    Dados-->>Plataforma: Retornar resultado
+    Plataforma-->>Modulo: Responder com desfecho
+    Modulo-->>Usuario: Apresentar estado final
 ```

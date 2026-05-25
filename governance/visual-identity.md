@@ -1,15 +1,15 @@
-# Visual Identity
+# Identidade Visual
 
-## Purpose
+## Propósito
 
-Define visual consistency guidelines for SILIC 2.0 documentation and ecosystem artifacts.
+Definir diretrizes de consistência visual para a documentação e os artefatos do ecossistema SILIC 2.0.
 
-## Guidelines
+## Diretrizes
 
-- Use standardized naming and heading hierarchy
-- Maintain consistent terminology and domain labels
-- Apply shared diagram and visual notation standards
+- Usar nomenclatura padronizada e hierarquia coerente de títulos
+- Manter terminologia e rótulos de domínio consistentes
+- Aplicar padrões compartilhados para diagramas e notação visual
 
-## Assets
+## Ativos
 
-Store approved visual assets in [`/assets`](/assets).
+Armazenar os ativos visuais aprovados em [`/assets`](/assets).

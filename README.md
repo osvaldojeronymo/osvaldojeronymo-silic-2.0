@@ -1,66 +1,68 @@
-# SILIC 2.0 — Documentation & Governance Hub
+# SILIC 2.0 — Centro de Documentação e Governança
 
-Central repository for documentation, architecture, research, and governance standards of the **SILIC 2.0 ecosystem**.
+Repositório central para documentação, arquitetura, pesquisa e padrões de governança do ecossistema do módulo de imóveis de uso da Caixa Econômica Federal (CAIXA) no **SILIC 2.0**.
 
-## Overview
+## Visão Geral
 
-SILIC 2.0 is an integrated ecosystem designed to organize strategic, operational, and technical initiatives across products and services. This repository is the single source of truth for:
+Este módulo de imóveis do SILIC 2.0 é um ecossistema integrado concebido para organizar iniciativas de gestão, operacionais e técnicas dos serviços relacionados aos imóveis de uso da CAIXA. Este repositório é a fonte única da verdade para:
 
-- Architectural direction
-- Governance and standards
-- Research artifacts
-- Institutional knowledge
+- Direcionamento arquitetural
+- Governança e padrões
+- Artefatos de pesquisa
+- Conhecimento institucional
 
-## Ecosystem Description
+## Descrição do Ecossistema
 
-The ecosystem is organized as coordinated repositories and modules that evolve under shared standards and architectural principles.
+O ecossistema é organizado em repositórios e módulos coordenados que evoluem sob padrões compartilhados e princípios arquiteturais comuns.
 
-### Repositories (placeholders)
+### Repositórios
 
 #### Núcleo do Sistema
 
-Tipo         Função                        Repositório	                                            GitPages
-Portal       Entrada principal do sistema  https://github.com/osvaldojeronymo/silic-portal-imoveis  [Portal](https://osvaldojeronymo.github.io/silic-portal-imoveis/)
-Serviços	   Solicitação de serviços       https://github.com/osvaldojeronymo/silic-request-service [Serviços](https://osvaldojeronymo.github.io/silic-request-service/)
-Operacional	 Tratamento de demandas        https://github.com/osvaldojeronymo/silic-hands-on        [Operacional](https://osvaldojeronymo.github.io/silic-hands-on/)
-Gestão    	 Fila de trabalho              https://github.com/osvaldojeronymo/silic-input-doc       [Gestão](https://osvaldojeronymo.github.io/silic-input-doc/))
+| Tipo        | Função                       | Repositório                                                          | GitPages                                                             |
+| ----------- | ---------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| Portal      | Entrada principal do sistema | [Portal](https://github.com/osvaldojeronymo/silic-portal-imoveis)    | [Portal](https://osvaldojeronymo.github.io/silic-portal-imoveis/)    |
+| Serviços    | Solicitação de serviços      | [Serviços](https://github.com/osvaldojeronymo/silic-request-service) | [Serviços](https://osvaldojeronymo.github.io/silic-request-service/) |
+| Operacional | Tratamento de demandas       | [Operacional](https://github.com/osvaldojeronymo/silic-hands-on)     | [Operacional](https://osvaldojeronymo.github.io/silic-hands-on/)     |
+| Gestão      | Fila de trabalho             | [Gestão](https://github.com/osvaldojeronymo/silic-input-doc)         | [Gestão](https://osvaldojeronymo.github.io/silic-input-doc/)         |
 
 ##### Ações Rápidas
 
-Tipo	      Função                Repositório	                                              GitPages
-Ação Rápida	Processo Digital      https://github.com/osvaldojeronymo/silic-digital-process  [Processo Digital](https://osvaldojeronymo.github.io/silic-digital-process/)
-Ação Rápida	Motivos de Devolução  https://github.com/osvaldojeronymo/silic-catalog-reasons/ [Motivos de Devolução](https://osvaldojeronymo.github.io/silic-catalog-reasons/)
-Ação Rápida	Assinador Digital     https://github.com/osvaldojeronymo/silic-digital-process/ [Assinador Digital](https://osvaldojeronymo.github.io/silic-digital-signer/)
-Ação Rápida	Gerador de Documentos https://github.com/osvaldojeronymo/silic-call-for-tenders [Gerador de Documentos](https://osvaldojeronymo.github.io/silic-call-for-tenders/)
+| Tipo        | Função                | Repositório                                                                        | GitPages                                                                           |
+| ----------- | --------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Ação Rápida | Processo Digital      | [Processo Digital](https://github.com/osvaldojeronymo/silic-digital-process)       | [Processo Digital](https://osvaldojeronymo.github.io/silic-digital-process/)       |
+| Ação Rápida | Motivos de Devolução  | [Motivos de Devolução](https://github.com/osvaldojeronymo/silic-catalog-reasons/)  | [Motivos de Devolução](https://osvaldojeronymo.github.io/silic-catalog-reasons/)   |
+| Ação Rápida | Assinador Digital     | [Assinador Digital](https://github.com/osvaldojeronymo/silic-digital-process/)     | [Assinador Digital](https://osvaldojeronymo.github.io/silic-digital-signer/)       |
+| Ação Rápida | Gerador de Documentos | [Gerador de Documentos](https://github.com/osvaldojeronymo/silic-call-for-tenders) | [Gerador de Documentos](https://osvaldojeronymo.github.io/silic-call-for-tenders/) |
 
-SILIC 2.0 follows a modular, evolvable architecture with clear ownership, standardized interfaces, and governance-driven decision making.
+O SILIC 2.0 segue uma arquitetura modular e evolutiva, com responsabilidades bem definidas, interfaces padronizadas e tomada de decisão orientada por governança.
 
-See:
+Veja:
 
 - [`/architecture/ecosystem-map.md`](/architecture/ecosystem-map.md)
 - [`/architecture/roadmap.md`](/architecture/roadmap.md)
-- [`/diagrams/architecture-context-example.md`](/diagrams/architecture-context-example.md)
+- [`/diagrams/system-context-diagram.md`](/diagrams/system-context-diagram.md)
 
-## Future Roadmap
+## Roteiro Futuro
 
-The roadmap is documented in [`/architecture/roadmap.md`](/architecture/roadmap.md) and should be reviewed periodically to align priorities, dependencies, and execution milestones.
+O roteiro está documentado em [`/architecture/roadmap.md`](/architecture/roadmap.md) e deve ser revisado periodicamente para alinhar prioridades, dependências e marcos de execução.
 
-## Operational Modules
+## Módulos Operacionais
 
-Operational modules are maintained with clear scope, interfaces, and service boundaries.
+Os módulos operacionais são mantidos com escopo, interfaces e limites de serviço bem definidos.
 
-- Module A — _TBD_
-- Module B — _TBD_
-- Module C — _TBD_
+- Módulo A — _A definir_
+- Módulo B — _A definir_
+- Módulo C — _A definir_
 
-## Quick Actions
+## Ações Rápidas
 
-- Review architecture documentation: [`/architecture`](/architecture)
-- Review governance standards: [`/governance`](/governance)
-- Contribute research and discovery artifacts: [`/research`](/research)
-- Add visual references and diagrams: [`/diagrams`](/diagrams)
+- Revisar a documentação de arquitetura: [`/architecture`](/architecture)
+- Revisar os padrões de governança: [`/governance`](/governance)
+- Contribuir com artefatos de pesquisa e descoberta: [`/research`](/research)
+- Adicionar referências visuais e diagramas: [`/diagrams`](/diagrams)
 
-## Documentation Structure
+## Estrutura da Documentação
 
 ```text
 /docs

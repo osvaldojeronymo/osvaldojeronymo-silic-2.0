@@ -1,16 +1,16 @@
-# Repository Standards
+# Padrões de Repositório
 
-## Purpose
+## Propósito
 
-Define minimum quality and organization standards for repositories within SILIC 2.0.
+Definir padrões mínimos de qualidade e organização para os repositórios do SILIC 2.0.
 
-## Baseline Standards
+## Padrões de Base
 
-- Clear README with scope and ownership
-- Versioned documentation and architecture references
-- Consistent branching and pull request conventions
-- Security and quality checks in delivery workflows
+- README claro com escopo e responsabilidade definidos
+- Documentação versionada e referências de arquitetura
+- Convenções consistentes de ramificação e solicitação de alteração
+- Verificações de segurança e qualidade nos fluxos de entrega
 
-## Compliance
+## Conformidade
 
-> Placeholder: define review cadence and compliance criteria.
+> A definir: estabelecer cadência de revisão e critérios de conformidade.
