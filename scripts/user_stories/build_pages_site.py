@@ -112,17 +112,18 @@ def build_index_html(index_payload: dict) -> str:
     :root {{ color-scheme: light; --bg: #f4efe5; --panel: #fffdf8; --ink: #14202b; --accent: #005ca9; --accent-2: #f39200; --muted: #5b6777; --line: #d9d1c3; --soft: #edf4fb; }}
     * {{ box-sizing: border-box; }}
     body {{ margin: 0; font-family: Georgia, 'Source Serif 4', serif; background: radial-gradient(circle at top left, #fff6df 0%, #f4efe5 38%, #efe7d8 100%); color: var(--ink); }}
-    main {{ max-width: 1180px; margin: 0 auto; padding: 32px 24px 72px; }}
-    h1 {{ margin: 0 0 12px; font-size: clamp(2rem, 3.35vw, 3.05rem); line-height: 1.08; }}
+    main {{ max-width: 1320px; margin: 0 auto; padding: 32px 24px 72px; }}
+    h1 {{ margin: 0 0 12px; font-size: clamp(1.72rem, 2.45vw, 2.55rem); line-height: 1.08; }}
     h2 {{ margin: 0 0 10px; font-size: 1.35rem; }}
     p, li {{ line-height: 1.6; }}
     a {{ color: var(--accent); text-decoration: none; font-weight: 600; }}
     a:hover {{ text-decoration: underline; }}
     .hero {{ position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(0, 92, 169, 0.96), rgba(7, 48, 86, 0.96)); color: #fff; border-radius: 24px; padding: 34px; box-shadow: 0 20px 60px rgba(20, 32, 43, 0.18); }}
     .hero::after {{ content: ''; position: absolute; inset: auto -120px -160px auto; width: 320px; height: 320px; background: radial-gradient(circle, rgba(243, 146, 0, 0.95) 0%, rgba(243, 146, 0, 0) 68%); }}
-    .eyebrow {{ margin: 0 0 10px; font-size: 0.88rem; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.82; }}
-    .hero-copy {{ width: calc(100% - 140px); max-width: 980px; min-width: 0; position: relative; z-index: 1; }}
-    .hero-actions {{ display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }}
+    .eyebrow {{ margin: 0 0 10px; font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.82; }}
+    .hero-copy {{ width: calc(100% - 32px); max-width: none; min-width: 0; position: relative; z-index: 1; }}
+    .hero-copy > .eyebrow, .hero-copy > .meta, .hero-copy > h1, .hero-copy > p {{ white-space: nowrap; }}
+    .hero-actions {{ display: flex; gap: 10px; flex-wrap: nowrap; margin-top: 22px; }}
     .hero-actions a {{ display: inline-flex; align-items: center; justify-content: center; padding: 11px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.24); background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; }}
     .hero-actions a.primary {{ background: var(--accent-2); border-color: var(--accent-2); color: #14202b; }}
     .hero-actions details {{ position: relative; }}
@@ -133,8 +134,8 @@ def build_index_html(index_payload: dict) -> str:
     .export-menu p {{ margin: 0 0 10px; color: var(--muted); font-size: 0.92rem; }}
     .export-menu a {{ display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-radius: 12px; color: var(--accent); background: #fff; border: 1px solid #dfe6ef; margin-top: 8px; text-decoration: none; }}
     .export-menu a:hover {{ background: var(--soft); text-decoration: none; }}
-    .meta {{ color: rgba(255,255,255,0.84); margin-bottom: 12px; }}
-    .stats {{ display: flex; gap: 12px; flex-wrap: wrap; margin: 22px 0 0; padding: 0; list-style: none; position: relative; z-index: 1; }}
+    .meta {{ color: rgba(255,255,255,0.84); margin-bottom: 12px; font-size: 0.95rem; }}
+    .stats {{ display: flex; gap: 12px; flex-wrap: nowrap; margin: 22px 0 0; padding: 0; list-style: none; position: relative; z-index: 1; }}
     .stats li {{ background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 8px 14px; font-size: 0.95rem; }}
     .section-head {{ display: flex; justify-content: space-between; gap: 16px; align-items: end; margin-top: 28px; }}
     .section-head p {{ margin: 0; color: var(--muted); max-width: 780px; }}
@@ -154,7 +155,7 @@ def build_index_html(index_payload: dict) -> str:
     .note-panel strong {{ color: #7c4b00; }}
     footer {{ margin-top: 28px; color: var(--muted); font-size: 0.95rem; }}
     code {{ background: rgba(20, 32, 43, 0.06); padding: 0.15rem 0.4rem; border-radius: 6px; }}
-    @media (max-width: 760px) {{ main {{ padding: 18px 14px 40px; }} .hero {{ padding: 24px; }} .hero-copy {{ width: 100%; max-width: none; }} .hero-actions {{ flex-direction: column; align-items: stretch; }} .section-head {{ display: block; }} }}
+    @media (max-width: 760px) {{ main {{ padding: 18px 14px 40px; }} .hero {{ padding: 24px; }} .hero-copy {{ width: 100%; max-width: none; }} .hero-copy > .eyebrow, .hero-copy > .meta, .hero-copy > h1, .hero-copy > p {{ white-space: normal; }} .hero-actions {{ flex-direction: column; align-items: stretch; flex-wrap: wrap; }} .stats {{ flex-wrap: wrap; }} .section-head {{ display: block; }} }}
   </style>
 </head>
 <body>
